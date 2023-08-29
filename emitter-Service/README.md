@@ -1,4 +1,4 @@
-## _ How to use This FrontEnd _
+## _ How to use This Emitter Service _
 
 1. Clone the Repository.
 
@@ -9,7 +9,7 @@ git clone https://github.com/raj01999/syook-encrypted-timeseries.git
 2. Move to working directory.
 
 ```bash
-cd syook-encrypted-timeseries/frontend
+cd syook-encrypted-timeseries/emitter-service
 ```
 
 3. Install all the dependencies.
@@ -24,5 +24,5 @@ npm install
 npm run start
 ```
 
-5. By default react will open at {port: 3000}
-   https://localhost:3000
+5. Emitter Service will open at {port: 3001}
+   https://localhost:3001
