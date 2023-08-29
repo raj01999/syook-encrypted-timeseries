@@ -18,7 +18,11 @@ const io = socketIo(server, { cors: { origin: "*" } });
 io.on("connection", (socket) => {
   setInterval(() => {
     socket.emit("message", createDataStream());
-  }, 2000);
+  }, 10000);
+
+  socket.on("finalMessage", (data) => {
+    console.log(data);
+  });
 });
 
 server.listen(process.env.PORT || 3001, (err) => {
