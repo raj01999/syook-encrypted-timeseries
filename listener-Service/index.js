@@ -56,7 +56,7 @@ socket1.on("message", async (message) => {
     downStreamData = {
       successRate: `${100 - failureRate}%`,
       time: time,
-      insertRes,
+      insertRes: insertRes,
     };
 
     if (Object.keys(socket2List).length !== 0) {
