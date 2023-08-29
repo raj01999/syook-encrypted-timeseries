@@ -1,5 +1,6 @@
 const { createHmac, createCipheriv } = require("crypto");
 
+// creating sha-256 ash of originalMessage
 const getSha256Hash = (data) => {
   const secret = process.env.SHA_256_HASH_SECRET;
 
@@ -12,6 +13,7 @@ const getSha256Hash = (data) => {
   return sha256Hash;
 };
 
+// encrypting the payload using encryption algorithm `aes-256-ctr` with a pass key
 const getEncryptedMessage = (data) => {
   const key = process.env.ENCRYPT_DECRYPT_SECRET_KEY;
   const iv = process.env.INITIALIZATION_VECTOR_SECRET;

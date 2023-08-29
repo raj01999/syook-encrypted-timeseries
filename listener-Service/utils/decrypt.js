@@ -1,20 +1,23 @@
 const { createDecipheriv, createHmac, timingSafeEqual } = require("crypto");
 
+// validate sha-256 Hmac using secret_key and hash_secret
 const validateHmac = (secret_key, data) => {
-  const message = JSON.stringify(data);
+  const stringData = JSON.stringify(data);
   const secret = process.env.SHA_256_HASH_SECRET;
 
+  const sha256Hash = createHmac("SHA256", secret)
+    .update(stringData, "utf-8")
+    .digest("base64");
+
   const providedHmac = Buffer.from(secret_key, "utf-8");
-  const generatedHash = Buffer.from(
-    createHmac("SHA256", secret).update(message).digest("base64"),
-    "utf-8"
-  );
+  const generatedHash = Buffer.from(sha256Hash, "utf-8");
 
   if (!timingSafeEqual(generatedHash, providedHmac)) {
     throw new Error("Invalid request");
   }
 };
 
+// decrypting the data using decryption algorithm `aes-256-ctr` with a pass key
 const decryptAndValidateData = async (messageArray, time) => {
   const decryptArray = [];
   const HMACFailCount = 0;
@@ -44,7 +47,7 @@ const decryptAndValidateData = async (messageArray, time) => {
 
     return { decryptArray, failureRate };
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
