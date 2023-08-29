@@ -25,4 +25,4 @@ npm run start
 ```
 
 5. Emitter Service will open at {port: 3001}
-   https://localhost:3001
+   http://localhost:3001

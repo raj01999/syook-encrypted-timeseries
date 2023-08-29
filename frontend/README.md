@@ -25,4 +25,4 @@ npm run start
 ```
 
 5. By default react will open at {port: 3000}
-   https://localhost:3000
+   http://localhost:3000

@@ -43,10 +43,10 @@ npm run start
 4. All the service will run on there respective port
 
 i. Emitter Service will open at {port: 3001}
-https://localhost:3001
+http://localhost:3001
 
 ii. Listener Service will open at {port: 3002}
-https://localhost:3002
+http://localhost:3002
 
 iii. By default react will open at {port: 3000}
-https://localhost:3000
+http://localhost:3000
